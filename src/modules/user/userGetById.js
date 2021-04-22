@@ -1,7 +1,13 @@
 import User from './Model';
 
-export default function userGetAll(req, res) {
-  User.find('6081c18d69e8f08654348f4a')
+export default function userGetById(req, res) {
+  console.log('----------------');
+  console.log(req.params.age);
+  console.log('----------------');
+
+  const userId = req.params.userId;
+
+  User.findById(userId)
     .exec()
     .then((result) => {
       res.status(200).json(result);
