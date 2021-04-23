@@ -1,15 +1,14 @@
 import User from './Model';
 
-export default function userGetById(req, res) {
+export default function deleteById(req, res) {
   const userId = req.params.userId;
 
-  User.findById({ _id: userId })
-    .exec()
+  User.deleteOne({ _id: userId })
     .then((result) => {
       res.status(200).json(result);
     })
     .catch((err) => {
       console.log(err);
-      res.status(400).json('User get all error');
+      res.status(400).json('User delete error');
     });
 }
