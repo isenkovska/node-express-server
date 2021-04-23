@@ -5,6 +5,7 @@ function dbConnect() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    userFindAndModify: false,
   });
 
   const db = mongoose.connection;
